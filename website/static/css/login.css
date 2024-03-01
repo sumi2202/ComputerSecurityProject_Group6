@@ -20,7 +20,7 @@ body{
     justify-content: center;
     align-items: center;
     background:linear-gradient(#c42021ff,  #f3752bff);
-    border-radius: 40px;
+    border-radius: 20px;
 }
 .wrapper h1{
     font-size: 36px;
