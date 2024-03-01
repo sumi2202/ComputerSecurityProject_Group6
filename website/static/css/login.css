@@ -20,6 +20,7 @@ body{
     justify-content: center;
     align-items: center;
     background:linear-gradient(#c42021ff,  #f3752bff);
+    border-radius: 40px;
 }
 .wrapper h1{
     font-size: 36px;
@@ -30,7 +31,6 @@ body{
     height: 50px;
     justify-content: center;
     align-items: center;
-    background: #fbf5f3;
     margin: 30px 0;
 }
 .input-box input{
@@ -40,4 +40,13 @@ body{
     border: none;
     outline: none;
     border: 2px solid #fbf5f3;
+    border-radius: 40px;
+}
+.input-box input::placeholder{
+    color: #fbf5f3;
+}
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 30%;
 }
