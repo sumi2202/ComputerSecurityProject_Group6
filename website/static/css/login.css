@@ -41,6 +41,9 @@ body{
     outline: none;
     border: 2px solid #fbf5f3;
     border-radius: 40px;
+    font-size: 16px;
+    color: #fbf5f3;
+    padding: 20px 45px 20px 20px;
 }
 .input-box input::placeholder{
     color: #fbf5f3;
@@ -49,4 +52,6 @@ body{
     position: absolute;
     right: 20px;
     top: 30%;
+    transform: translate(-50%);
+    font-size: 20px;
 }
