@@ -11,7 +11,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #fbf5f3
+    background: url(initial_image_bg.png) no-repeat;
+    background-size: cover;
     
 }
 .wrapper{
@@ -19,8 +20,11 @@ body{
     color: #fbf5f3;
     justify-content: center;
     align-items: center;
-    background:linear-gradient(#c42021ff,  #f3752bff);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
     border-radius: 20px;
+    padding: 30px 40px;
 }
 .wrapper h1{
     font-size: 36px;
@@ -43,6 +47,7 @@ body{
     right: 15px; 
     top: 50%;
     transform: translateY(-50%);
+    font-size: 20px;
     color: #fbf5f3;
 }
 .input-box input{
@@ -66,4 +71,40 @@ body{
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
+}
+.remember-forgot label input{
+    accent-color: #fbf5f3;
+    margin-right:3px;
+}
+.remember-forgot a{
+    color:#fbf5f3;
+    text-decoration: none;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #fbf5f3;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color:#c42021ff;
+    font-weight: 600;
+}
+.wrapper .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.register-link p a{
+    color: #fbf5f3;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link p a:hover{
+    text-decoration: underline;
 }
