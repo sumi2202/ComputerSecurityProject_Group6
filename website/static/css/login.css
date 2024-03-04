@@ -20,7 +20,7 @@ body{
     color: #fbf5f3;
     justify-content: center;
     align-items: center;
-    background: transparent;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,60,113,1));;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     border-radius: 20px;
