@@ -108,3 +108,7 @@ body{
 .register-link p a:hover{
     text-decoration: underline;
 }
+
+.hidden {
+    display: none;
+}

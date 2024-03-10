@@ -16,17 +16,17 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
+        <form action="" id="loginForm">
             <h1>Log In</h1>
             <div class="input-box">
                 <div class="input-wrapper">
-                    <input type="text" placeholder="Student Number" required>
+                    <input type="text" placeholder="Student Number" id="studentNumber" required>
                     <i class='bx bxs-user-badge'></i>
                 </div>
             </div>
             <div class="input-box">
                 <div class="input-wrapper">
-                    <input type="text" style="-webkit-text-security: circle" placeholder="Password" required>
+                    <input type="text" style="-webkit-text-security: circle" placeholder="Password" id="loginPassword" required>
                     <i class='bx bxs-lock' ></i>
                 </div>
             </div>
@@ -42,4 +42,6 @@
 
     </div>
 </body>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+
 </html>
