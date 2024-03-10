@@ -34,9 +34,10 @@ def encrypt_report():
     data = request.get_json()
     report_password = data['reportPassword']
 
-    # Get the directory of the current script
-    file_name = f't224-fill-23e.pdf'
-    file_path = os.path.join('pdf-documents', file_name)
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+
+    file_path = os.path.join(current_directory, 'pdf-documents', 't224-fill-23e.pdf')
+
     print(file_path)
 
     # Encrypt the PDF report with user's login password
