@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+</head>
+<body>
+<h1>Enter Payment Amount</h1>
+    <form action="/submit_payment" method="post">
+        <label for="amount">Amount:</label><br>
+        <input type="number" id="amount" name="amount" min="0" step="0.02" required><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
