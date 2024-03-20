@@ -11,6 +11,11 @@ views = Blueprint('views', __name__)
 def home():
     return render_template("home.html")
 
+#route for dashboard/profile page
+@views.route('/profile_page')
+def profile():
+    return render_template("profile_page.html")
+
 # Route for upload page
 @views.route('/upload', methods=['GET', 'POST'])
 def upload():
