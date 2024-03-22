@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
     <title>Upload</title>
+    <link rel="stylesheet" href="upload.css">
 </head>
 <body>
+    <div class="wrapper">
+    <div class="textcontainer">
 <h1>Upload PDF</h1>
 {% for message in get_flashed_messages() %}
   <div class=flash>{{ message }}</div>
@@ -13,5 +17,7 @@
   <input type=file name=file>
   <input type=submit value=Upload>
 </form>
+</div>
+</div>
 </body>
 </html>
