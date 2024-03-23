@@ -2,14 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/payment.css') }}">
     <title>Payment</title>
-</head>
-<body>
-<h1>Enter Payment Amount</h1>
-    <form action="/submit_payment" method="post">
-        <label for="amount">Amount:</label><br>
-        <input type="number" id="amount" name="amount" min="0" step="0.02" required><br>
-        <input type="submit" value="Submit">
-    </form>
-</body>
+        </head>
+    <body>
+      <div class="container">
+          <h1>Make a Payment</h1>
+          <form action="/submit_payment" method="post">
+              <div class="row">
+                  <div class="column">
+                     <h3 class="title">Payment Category</h3>
+                     <div class="input-box">
+                         <span id="cat">Choose category from dropdown</span>
+                         <select name="category" id="category" required>
+                             <option value="Tuition">Tuition</option>
+                             <option value="Residence">Residence</option>
+                             <option value="Insurance">Insurance</option>
+                         </select>
+                     </div>
+                     <div class="input-box">
+                        <span>Amount</span>
+                        <input type="number" id="amount" name="amount" min="0" required>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <h3 class="title">Payment</h3>
+                    <div class="input-box">
+                        <span>Cards accepted</span>
+                       <img src="../static/css/imgcards.png">
+                    </div>
+
+                    <div class="input-box">
+                       <span>Cardholder Name</span>
+                       <input type="text"
+                       placeholder="FirstName LastName">
+                   </div>
+
+                   <div class="input-box">
+                       <span>Card number</span>
+                       <input type="number"
+                       placeholder="12345678910">
+                   </div>
+
+                   <div class="input-box">
+                       <span>Exp. Month</span>
+                       <input type="number"
+                       placeholder="01" maxlength="2">
+                   </div>
+
+                   <div class="flex">
+
+                       <div class="input-box">
+                           <span>Exp. Year</span>
+                           <input type="number"
+                           placeholder="24" maxlength="2">
+                       </div>
+
+                       <div class="input-box">
+                           <span>CVV</span>
+                           <input type="password" maxlength="3" placeholder="CVV">
+                       </div>
+                   </div>
+                 </div>
+              </div>
+
+              <input type="submit" value="Submit" class="btn">
+          </form>
+      </div>
+    </body>
 </html>
