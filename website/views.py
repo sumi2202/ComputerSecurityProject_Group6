@@ -58,14 +58,26 @@ def payment():
 # Route for submitted payment
 @views.route('/submit_payment', methods=['POST'])
 def submit_payment():
+    category = request.form.get('category')
     amount = request.form.get('amount')     # Form to get the amount
     encrypted_data, decrypted_data = encrypt_decrypt_payment(amount)       # Calls the encrypt_decrypt_payment function
+    session['category'] = category
+    session['amount'] = decrypted_data.decode('utf-8')[4:]
+    # When payment is successful, a pop-up displays stating the payment was received and redirects to confirmation page
     return """
-    <html>
-    <body>
-    <script>
-    alert('Payment of $' + {} + ' received!');
-    </script>
-    </body>
-    </html>
-    """.format(decrypted_data.decode('utf-8')[4:])
+        <html>
+        <body>
+        <script>
+        alert('Payment received!');
+        window.location.href='/confirmation';
+        </script>
+        </body>
+        </html>
+        """
+# Route for payment confirmation page
+@views.route('/confirmation')
+def confirmation():
+    category = session.get('category')
+    amount = session.get('amount')
+    return render_template("paymentconfirm.html", category=category, amount=amount)
+    
