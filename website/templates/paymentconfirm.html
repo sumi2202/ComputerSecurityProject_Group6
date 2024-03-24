@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/payment.css') }}">
+    <title>Confirmation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+<h1 class="header">Payment Received</h1>
+<p>Your payment of ${{ amount }} for {{ category }} has been received!</p>
+<p>This is a confirmation for your records.</p>
+<button onclick="window.location.href='/payment'">Make another payment</button>
+<button onclick="window.location.href='/home'">Return to home</button>
+</div>
+</div>
+
+</body>
+
+</html>

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             if (data.success) {
                 // Go to download page for now
-                window.location.href ='/download';
+                window.location.href ='/profile_page';
             } else {
                 throw new Error ('Login failed: ' + data.message);
             }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+    <title>Uploaded files</title>
+</head>
+<body>
+<div class="wrapper">
+<h1>Uploaded Files</h1>
+    <div class="filelist">
+<ul>
+
+  <li><a href="{{ url_for('views.download_file', filename=filename) }}">{{ filename }}</a></li>
+
+</ul>
+</div>
+</div>
+</body>
+</html>
