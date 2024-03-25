@@ -10,7 +10,10 @@ body{
     min-height: 100vh;
     background-color: #fff;
 }
-.container-fluid{
+.row{
+    height:100%;
+}
+.col-md-9{
     width: 420px;
     height: 100%;
     color: #fbf5f3;
@@ -18,4 +21,7 @@ body{
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     padding: 30px 40px;
+}
+.offcanvas .body{
+
 }
