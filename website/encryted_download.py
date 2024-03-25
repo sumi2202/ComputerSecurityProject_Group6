@@ -30,23 +30,31 @@ def verify_user():
 @encrypt_file.route('/encrypt-report', methods=['POST'])
 @login_required
 def encrypt_report():
-    # Get user's  report password
-    data = request.get_json()
-    report_password = data['reportPassword']
+    try:
+        # Get user's  report password
+        data = request.get_json()
+        report_password = data['reportPassword']
 
-    current_directory = os.path.dirname(os.path.abspath(__file__))
+        current_directory = os.path.dirname(os.path.abspath(__file__))
 
-    file_path = os.path.join(current_directory, 'pdf-documents', 't224-fill-23e.pdf')
+        file_path = os.path.join(current_directory, 'pdf-documents', 't224-fill-23e.pdf')
 
-    print(file_path)
+        print(file_path)
 
-    # Encrypt the PDF report with user's login password
-    encrypted_file_path = encrypt_pdf(file_path, report_password)
+        # Encrypt the PDF report with user's login password
+        encrypted_file_path = encrypt_pdf(file_path, report_password)
 
-    # Store the path or identifier of the encrypted file
-    # (in the user session, database, etc., depending on your application logic)
-    store_encrypted_file_path(encrypted_file_path)
-    return jsonify({'success': True})
+        # Store the path or identifier of the encrypted file
+        # (in the user session, database, etc., depending on your application logic)
+        store_encrypted_file_path(encrypted_file_path)
+        return jsonify({'success': True})
+    except Exception as e:
+        # Log the error message for debugging
+        print(str(e))
+        # Return a JSON response with the error message
+        response = jsonify({'success': False, 'message': 'Server error: ' + str(e)})
+        response.status_code = 500
+        return response
 
 
 @encrypt_file.route('/download-report', methods=['GET'])
@@ -78,6 +86,8 @@ def encrypt_pdf(file_path, password):
         writer.write(encrypted_file)
 
     return encrypted_file_path
+
+
 
 
 def store_encrypted_file_path(encrypted_file_path):
