@@ -9,8 +9,6 @@ auth = Blueprint('auth', __name__)
 @auth.route('/login', methods=['GET'])
 def login():
     return render_template("login.html")
-
-
 @auth.route('/login', methods=['POST'])
 def authenticate_login(authenticated=None):
     data = request.get_json()
