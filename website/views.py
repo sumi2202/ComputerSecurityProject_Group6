@@ -4,6 +4,7 @@ from flask import current_app as app
 import os
 from .keygeneration import encrypt_aes, encrypt_decrypt_payment
 from .keygeneration import decrypt_aes
+from .models import User
 
 views = Blueprint('views', __name__)
 
@@ -14,7 +15,8 @@ def home():
 #route for dashboard/profile page
 @views.route('/profile_page')
 def profile():
-    return render_template("profile_page.html")
+    user = User.query.first()  # Assuming you have a User model with first_name and last_name attributes
+    return render_template('profile_page.html', user=user)
 
 # Route for upload page
 @views.route('/upload', methods=['GET', 'POST'])
