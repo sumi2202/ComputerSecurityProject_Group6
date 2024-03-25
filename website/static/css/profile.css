@@ -13,15 +13,25 @@ body{
 .row{
     height:100%;
 }
+
+.navbar-nav{
+    flex-direction: column;
+}
+
+.navbar.navbar-brand {
+    color: #fff !important;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #fff !important;
+    display: block !important;
+}
+
 .col-md-9{
     width: 420px;
     height: 100%;
-    color: #fbf5f3;
     background-image: linear-gradient(to bottom, rgba(0,119,202,1), rgba(0,60,113,1));;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     padding: 30px 40px;
-}
-.offcanvas .body{
-
 }
