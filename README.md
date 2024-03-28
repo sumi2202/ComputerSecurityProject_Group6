@@ -13,4 +13,5 @@ We will make use of several concepts such as RSA-AES cryptography and RC4 hashin
 
 1. Install necessary libraries such as pycryptodome, PyPDF2, Flask SQLAlchemy, etc. You can do so through ```pip install {library}```.
 2. Run init_db.py to initialize the database.
-3. Run main.py
+3. Run main.py.
+4. The application will run on the following url: ```http://127.0.0.1:5000```.
